@@ -1,79 +1,156 @@
-from flask import Flask, jsonify, request
-from flask_cors import CORS  # Import CORS to enable cross-origin requests
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>VestSmart</title>
+    <style>
+        /* General layout and styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e2a3a;
+            color: #fff;
+        }
+        #header {
+            background-color: #26344c;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        #header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        #header p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+        }
 
-app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests
+        /* Chat container and styles */
+        #chat {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #2d3c53;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        #chat-log {
+            height: 400px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #35455d;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        .user {
+            background-color: #3498db;
+            color: white;
+            text-align: right;
+        }
+        .bot {
+            background-color: #34495e;
+            color: white;
+            text-align: left;
+        }
 
-# Vestibulares data
-vestibulares_data = {
-    "ENEM": {
-        "date": "3 e 10 de novembro de 2024", 
-        "fee": "R$ 85,00",
-        "official_website": "https://enem.inep.gov.br/",
-        "phases": 1
-    },
-    "FUVEST": {
-        "date": "15 de janeiro de 2024",
-        "fee": "R$ 190,00",
-        "official_website": "https://www.fuvest.br/",
-        "phases": 2
-    },
-    "UNICAMP": {
-        "date": "12 de dezembro de 2023",
-        "fee": "R$ 190,00",
-        "official_website": "https://www.comvest.unicamp.br/",
-        "phases": 2
-    },
-}
+        /* Input field and button styling */
+        #user-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 10px;
+            font-size: 1rem;
+            background-color: #3d5369;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
 
-# Function to retrieve specific vestibular info
-def get_vestibular_info(exam_name):
-    exam_name = exam_name.upper()
-    return vestibulares_data.get(exam_name, {"error": "Vestibular não encontrado"})
+        /* Footer and credits */
+        #footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #26344c;
+        }
+        #footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
 
-# Function to generate chatbot response
-def chatbot_response(user_input):
-    user_input = user_input.lower()
+    <!-- Header with name and description -->
+    <div id="header">
+        <h1>VestSmart</h1>
+        <p>Seu assistente virtual para informações sobre vestibulares!</p>
+    </div>
 
-    # Handle requests for all exams
-    if "todos os vestibulares" in user_input:
-        response = "Aqui estão os vestibulares disponíveis:\n"
-        for exam, details in vestibulares_data.items():
-            response += f"{exam}: {details['date']}, Taxa: {details['fee']}, Fases: {details['phases']}\n"
-        return response
+    <!-- Chat container -->
+    <div id="chat">
+        <div id="chat-log"></div>
+        <input type="text" id="user-input" placeholder="Digite sua mensagem aqui..." autofocus>
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
 
-    # Check for specific exam inquiries
-    for exam, details in vestibulares_data.items():
-        if exam.lower() in user_input:
-            if "data" in user_input:
-                return f"A data do {exam} é: {details['date']}."
-            else:
-                return (
-                    f"Detalhes do {exam}:\n"
-                    f"Data: {details['date']}\n"
-                    f"Taxa: {details['fee']}\n"
-                    f"Site oficial: {details['official_website']}\n"
-                    f"Fases: {details['phases']}\n"
-                )
+    <!-- Footer with credit -->
+    <div id="footer">
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/cauameloo/" target="_blank">Cauã Victor</a></p>
+    </div>
 
-    # Handle greetings and common questions
-    if any(greeting in user_input for greeting in ["olá", "oi", "como está"]):
-        return "Olá! Como posso ajudá-lo hoje?"
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (!userInput) return;
 
-    if "qual é o dia" in user_input or "que dia é hoje" in user_input:
-        from datetime import datetime
-        today = datetime.today().strftime('%d/%m/%Y')
-        return f"Hoje é {today}."
+            // Display user message
+            const chatLog = document.getElementById("chat-log");
+            chatLog.innerHTML += `<div class="message user">${userInput}</div>`;
 
-    return "Desculpe, não entendi sua pergunta. Por favor, pergunte sobre um vestibular específico."
+            // Send user message to the chatbot API
+            const response = await fetch("https://vestsmart.onrender.com/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            });
 
-# Endpoint for the chatbot to respond to user messages
-@app.route('/chat', methods=['POST'])
-def chat():
-    user_message = request.json.get("message", "")
-    response = chatbot_response(user_message)
-    return jsonify({"response": response})
+            const data = await response.json();
 
-# Run the Flask app
-if __name__ == '__main__':
-    app.run(debug=True)
+            // Display bot response with typing animation
+            chatLog.innerHTML += `<div class="message bot" id="typing"></div>`;
+            document.getElementById('typing').innerHTML = "Carregando...";
+
+            // Simulate typing animation
+            setTimeout(() => {
+                document.getElementById('typing').innerHTML = data.response;
+                chatLog.scrollTop = chatLog.scrollHeight;
+            }, 1500);
+
+            // Clear input field
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+
+</body>
+</html>
