@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS  # Import CORS to allow cross-origin requests
 
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests
+CORS(app, origins=["*"])   # Allow cross-origin requests
 
 # Your existing data
 vestibulares_data = {
