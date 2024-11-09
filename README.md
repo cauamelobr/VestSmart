@@ -1,2 +1,2 @@
 # VestSmart
-chatbot platform about brazilian vestibulares
+chatbot platform about brazilian vestibulares (college entrance exams)
