@@ -1,5 +1,5 @@
 # Action Plan: VestSmart Development  
-*Created by [Your Name]*  
+*Created by Cauã Victor*  
 
 ## Overview  
 The goal of this 6-month plan is to develop VestSmart, a sophisticated chatbot for Brazilian vestibulares using a Retrieval-Augmented Generation (RAG) approach. This plan outlines the tasks for each month, resources to use, and methods to ensure successful completion.
