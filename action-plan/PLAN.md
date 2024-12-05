@@ -1,161 +1,113 @@
-# Action Plan
+# Action Plan: VestSmart Development  
+*Created by [Your Name]*  
 
-> Created by [your name] for COMP 290: Essential Tools for Computer Science
-
-The final task of your final project is to create an action plan for the project / idea you have come up with. Below serves as a template outlining the expectations for your outline. You will receive full points as long as you make a good-faith effort in creating goals and good tasks for each month. You can also choose which months you would like to include in the 6-month action plan.
-
-Final reminder, please note COMP 290's policies towards generative AI use in the course syllabus:
-
-> All students are expected to follow the guidelines of the UNC Honor Code. Students may use artificial intelligence tools such as ChatGPT to reinforce or explain concepts, but never to complete assignments, generate code to submit on assignments, or generate text to submit for assignments - ***especially on the final project submission***. Doing so is an Honor Court violation and will result in a 0 on that portion of an assignment. For programming assignment submissions, you must understand and be able to explain any code snippet, derivation, or generated code you make use of in your work if asked by an instructor.
-
-Believe it or not, it is quite easy for instructors to tell when students paste in ChatGPT's responses into their submissions without any editing. If you have any questions towards this policy, please reach out to either Ajay or Noah.
+## Overview  
+The goal of this 6-month plan is to develop VestSmart, a sophisticated chatbot for Brazilian vestibulares using a Retrieval-Augmented Generation (RAG) approach. This plan outlines the tasks for each month, resources to use, and methods to ensure successful completion.
 
 ---
 
-## Month 1 - (Choose Month Here)
+## Month 1: December 2024  
+### Goals  
+1. **Data Collection**: Reach out to public and private institutions to obtain access to large public datasets relevant to vestibulares.  
+2. **Research Alternatives for Embeddings**: Explore embedding methods beyond OpenAI’s API to reduce costs, such as **FAISS**, **Pinecone**, or **Hugging Face Sentence Transformers**.  
+3. **Familiarization with Web Development**: Learn about sophisticated web platforms and study key tools for back-end development using FastAPI.  
 
-### Goals
-**What would you like to accomplish in this three week period? This can either be learning a new skill or working on your project. Include three bullet points in this section, each should be ~2-3 sentences.**
+### Tasks  
+- Contact at least five public/private organizations requesting data on vestibulares.  
+- Research embedding solutions like FAISS or Hugging Face.  
+- Build a basic FastAPI back end connected to a mock database.  
+- Review foundational web development courses on **MIT OpenCourseWare** and **CodeAcademy**.  
 
-- *Goal one*
-- *Goal two*
-- *Goal three*
-
-### Tasks
-**Write a checklist of tasks to complete. When you are following this plan, you should use these tasks to drive your progress and stay focused! To accomplish this, your tasks should be clear, granular, and not overloaded. Try to include ~4 tasks in this section, adjusting more or less as needed based on the goal for this three week period. Note, if you are consistently including only 1-2 tasks per period, you are likely not being clear and granular enough.**
-
-- [ ] *Todo: Item one*
-- [ ] *Todo: Item two*
-- [ ] *Todo: Item three*
-- [ ] *Todo: Item four*
-
-### Extra Resources
-**Try to include 1-2 extra resources in this section that can help you complete your task. You may just paste a link for each here.**
-
-- *Item one*
-- *Item two*
+### Extra Resources  
+- [FAISS Documentation](https://faiss.ai)  
+- [FastAPI Official Documentation](https://fastapi.tiangolo.com)  
+- [IBM YouTube Series on AI and ML](https://www.youtube.com/@ibm)  
 
 ---
 
-## Month 2 - (Choose Month Here)
+## Month 2: January 2025  
+### Goals  
+1. **Develop a Prototype Database**: Load datasets into a markdown-based database for testing.  
+2. **Integrate Front-End and Back-End**: Begin connecting a front-end interface with the back-end API.  
+3. **Create a Sophisticated Web Platform**: Design a sleek, user-friendly interface inspired by ChatGPT's UI using HTML, CSS, and JavaScript.  
 
-### Goals
-**What would you like to accomplish in this three week period? This can either be learning a new skill or working on your project. Include three bullet points in this section, each should be ~2-3 sentences.**
+### Tasks  
+- Use LangChain to develop a prototype that retrieves information from the markdown database.  
+- Start building the chatbot interface with a color scheme of dark blue, silver, and black.  
+- Learn about connecting FastAPI with front-end technologies like React.  
 
-- *Goal one*
-- *Goal two*
-- *Goal three*
-
-### Tasks
-**Write a checklist of tasks to complete. When you are following this plan, you should use these tasks to drive your progress and stay focused! To accomplish this, your tasks should be clear, granular, and not overloaded. Try to include ~4 tasks in this section, adjusting more or less as needed based on the goal for this three week period. Note, if you are consistently including only 1-2 tasks per period, you are likely not being clear and granular enough.**
-
-- [ ] *Todo: Item one*
-- [ ] *Todo: Item two*
-- [ ] *Todo: Item three*
-- [ ] *Todo: Item four*
-
-### Extra Resources
-**Try to include 1-2 extra resources in this section that can help you complete your task. You may just paste a link for each here.**
-
-- *Item one*
-- *Item two*
+### Extra Resources  
+- [LangChain Documentation](https://docs.langchain.com)  
+- [React Documentation](https://react.dev)  
+- [CodeAcademy Course: Full-Stack Development](https://www.codecademy.com)  
 
 ---
 
-## Month 3 - (Choose Month Here)
+## Month 3: February 2025  
+### Goals  
+1. **Test the MVP with Close Friends**: Collect feedback from initial users.  
+2. **Optimize Back-End Performance**: Implement a scalable and efficient RAG model.  
+3. **Begin Outreach to Educational Companies**: Identify potential partners who may benefit from VestSmart.  
 
-### Goals
-**What would you like to accomplish in this three week period? This can either be learning a new skill or working on your project. Include three bullet points in this section, each should be ~2-3 sentences.**
+### Tasks  
+- Refine the embedding process using FAISS or Hugging Face tools.  
+- Host the prototype on Netlify for user testing.  
+- Collect feedback from at least 10 users and improve based on input.  
+- Reach out to at least 3 tutoring or educational companies.  
 
-- *Goal one*
-- *Goal two*
-- *Goal three*
-
-### Tasks
-**Write a checklist of tasks to complete. When you are following this plan, you should use these tasks to drive your progress and stay focused! To accomplish this, your tasks should be clear, granular, and not overloaded. Try to include ~4 tasks in this section, adjusting more or less as needed based on the goal for this three week period. Note, if you are consistently including only 1-2 tasks per period, you are likely not being clear and granular enough.**
-
-- [ ] *Todo: Item one*
-- [ ] *Todo: Item two*
-- [ ] *Todo: Item three*
-- [ ] *Todo: Item four*
-
-### Extra Resources
-**Try to include 1-2 extra resources in this section that can help you complete your task. You may just paste a link for each here.**
-
-- *Item one*
-- *Item two*
+### Extra Resources  
+- [Netlify Deployment Guide](https://docs.netlify.com)  
+- [Hugging Face Sentence Transformers](https://huggingface.co/sentence-transformers)  
 
 ---
 
-## Month 4 - (Choose Month Here)
+## Month 4: March 2025  
+### Goals  
+1. **Refine the Web Platform**: Address feedback to improve UI/UX.  
+2. **Develop Key Features**: Add user authentication and search filters.  
+3. **Explore Mobile Development**: Begin learning React Native for future iOS app development.  
 
-### Goals
-**What would you like to accomplish in this three week period? This can either be learning a new skill or working on your project. Include three bullet points in this section, each should be ~2-3 sentences.**
+### Tasks  
+- Enhance the chatbot interface with user authentication and search optimization.  
+- Watch tutorials on React Native for iOS apps.  
+- Conduct further outreach to institutions for additional datasets.  
 
-- *Goal one*
-- *Goal two*
-- *Goal three*
-
-### Tasks
-**Write a checklist of tasks to complete. When you are following this plan, you should use these tasks to drive your progress and stay focused! To accomplish this, your tasks should be clear, granular, and not overloaded. Try to include ~4 tasks in this section, adjusting more or less as needed based on the goal for this three week period. Note, if you are consistently including only 1-2 tasks per period, you are likely not being clear and granular enough.**
-
-- [ ] *Todo: Item one*
-- [ ] *Todo: Item two*
-- [ ] *Todo: Item three*
-- [ ] *Todo: Item four*
-
-### Extra Resources
-**Try to include 1-2 extra resources in this section that can help you complete your task. You may just paste a link for each here.**
-
-- *Item one*
-- *Item two*
+### Extra Resources  
+- [React Native Documentation](https://reactnative.dev)  
+- [MIT OpenCourseWare Web Development Course](https://ocw.mit.edu)  
 
 ---
 
-## Month 5 - (Choose Month Here)
+## Month 5: April 2025  
+### Goals  
+1. **Prepare for Mobile Development**: Finalize design decisions for a React Native app.  
+2. **Scale the Back End**: Make the database and API scalable for a larger audience.  
+3. **Expand User Testing**: Test the platform with more educational institutions.  
 
-### Goals
-**What would you like to accomplish in this three week period? This can either be learning a new skill or working on your project. Include three bullet points in this section, each should be ~2-3 sentences.**
+### Tasks  
+- Finalize iOS app prototype with React Native.  
+- Optimize the FastAPI back end for handling multiple requests.  
+- Conduct usability testing with at least two educational institutions.  
 
-- *Goal one*
-- *Goal two*
-- *Goal three*
-
-### Tasks
-**Write a checklist of tasks to complete. When you are following this plan, you should use these tasks to drive your progress and stay focused! To accomplish this, your tasks should be clear, granular, and not overloaded. Try to include ~4 tasks in this section, adjusting more or less as needed based on the goal for this three week period. Note, if you are consistently including only 1-2 tasks per period, you are likely not being clear and granular enough.**
-
-- [ ] *Todo: Item one*
-- [ ] *Todo: Item two*
-- [ ] *Todo: Item three*
-- [ ] *Todo: Item four*
-
-### Extra Resources
-**Try to include 1-2 extra resources in this section that can help you complete your task. You may just paste a link for each here.**
-
-- *Item one*
-- *Item two*
+### Extra Resources  
+- [Scaling FastAPI](https://fastapi.tiangolo.com/advanced/scaling)  
+- [CodeAcademy Course on React Native](https://www.codecademy.com)  
 
 ---
 
-## Month 6 - (Choose Month Here)
+## Month 6: May 2025  
+### Goals  
+1. **Launch the iOS App**: Publish a beta version of the React Native app on the App Store.  
+2. **Expand Outreach**: Present VestSmart to educational institutions and potential investors.  
+3. **Measure Success**: Collect metrics to analyze usage and effectiveness of the platform.  
 
-### Goals
-**What would you like to accomplish in this three week period? This can either be learning a new skill or working on your project. Include three bullet points in this section, each should be ~2-3 sentences.**
+### Tasks  
+- Publish the iOS app on the App Store following Apple guidelines.  
+- Use analytics tools to track user engagement and gather metrics.  
+- Schedule presentations or demos with 5 educational institutions.  
 
-- *Goal one*
-- *Goal two*
-- *Goal three*
+### Extra Resources  
+- [Apple Developer Guidelines](https://developer.apple.com/app-store/review/guidelines)  
+- [Google Analytics for Websites](https://analytics.google.com)  
 
-### Tasks
-**Write a checklist of tasks to complete. When you are following this plan, you should use these tasks to drive your progress and stay focused! To accomplish this, your tasks should be clear, granular, and not overloaded. Try to include ~4 tasks in this section, adjusting more or less as needed based on the goal for this three week period. Note, if you are consistently including only 1-2 tasks per period, you are likely not being clear and granular enough.**
-
-- [ ] *Todo: Item one*
-- [ ] *Todo: Item two*
-- [ ] *Todo: Item three*
-- [ ] *Todo: Item four*
-
-### Extra Resources
-**Try to include 1-2 extra resources in this section that can help you complete your task. You may just paste a link for each here.**
-
-- *Item one*
-- *Item two*
+---
